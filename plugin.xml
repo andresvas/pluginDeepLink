@@ -13,13 +13,13 @@
 </config-file>
 
 <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:label="New Activity" android:name="com.todo1.plugin.NewActivity">
+            <activity android:label="Personas" android:name="com.todo1.plugin.NewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="tutsplus" android:host="deeplink"/>
-                <data android:scheme="http" android:host="www.example.com"/>
+                <data android:scheme="https" android:host="m.bancolombia.com"/>
                 <data android:scheme="myapp" android:host="www.example.com"/>
             </intent-filter>
             </activity>
