@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.todo1.plugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<name>PluginDeepLink</name>
+<js-module name="PluginDeepLink" src="www/PluginDeepLink.js">
+<clobbers target="cordova.plugins.PluginDeepLink" />
+</js-module>
+<platform name="android">
+
+<config-file parent="/*" target="res/xml/config.xml">
+<feature name="PluginDeepLink">
+<param name="android-package" value="com.todo1.plugin.PluginDeepLink"/>
+</feature>
+</config-file>
+
+<config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:label="New Activity" android:name="com.todo1.plugin.NewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="tutsplus" android:host="deeplink"/>
+                <data android:scheme="http" android:host="www.example.com"/>
+                <data android:scheme="myapp" android:host="www.example.com"/>
+            </intent-filter>
+            </activity>
+</config-file>
+
+<config-file parent="/*" target="AndroidManifest.xml">
+</config-file>
+
+<source-file src="src/android/PluginDeepLink.java" target-dir="src/com/todo1/plugin" />
+<source-file src="src/android/NewActivity.java" target-dir="src/com/todo1/plugin" />
+<source-file src="src/android/activity_new.xml" target-dir="res/layout" />
+
+
+</platform>
+
+</plugin>
