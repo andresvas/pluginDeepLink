@@ -12,8 +12,7 @@
 </feature>
 </config-file>
 
-<config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:label="Personas" android:name="com.todo1.plugin.NewActivity">
+<config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -22,7 +21,7 @@
                 <data android:scheme="https" android:host="m.bancolombia.com"/>
                 <data android:scheme="myapp" android:host="www.example.com"/>
             </intent-filter>
-            </activity>
+           
 </config-file>
 
 <config-file parent="/*" target="AndroidManifest.xml">
